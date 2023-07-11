@@ -1,44 +1,24 @@
+package uebung1;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class Person {
-    private String name;
-    private String lastName;
-    private int age;
+import static uebung1.Methoden.*;
 
-    public Person(String name, String lastName, int age) {
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-}
-
-public class Uebung1 {
+public class Main {
     public static void main(String[] args) {
         // Erstelle eine Liste von 65 Personen
         List<Person> personList = createPersonList();
 
-        // Suche nach einer Person mit dem Namen "John"
+        // Suche nach einer uebung1.Person mit dem Namen "John"
         String searchName = "John";
         System.out.println(searchName);
         Person foundPerson = searchPersonWithName(personList, searchName);
         foundPerson(foundPerson);
 
-        // Suche nach einer Person mit dem Namen "Lewis"
+        // Suche nach einer uebung1.Person mit dem Namen "Lewis"
         String searchLast = "Lewis";
         System.out.println(searchLast);
         Person foundPerson2 = searchPersonwithLastname(personList, searchLast);
@@ -60,50 +40,10 @@ public class Uebung1 {
 
     private static void foundPerson(Person foundPerson) {
         if (foundPerson != null) {
-            System.out.println("Gefundene Person: " + foundPerson.getName() + " " + foundPerson.getLastName() + ", Alter: " + foundPerson.getAge());
+            System.out.println("Gefundene uebung1.Person: " + foundPerson.getName() + " " + foundPerson.getLastName() + ", Alter: " + foundPerson.getAge());
         } else {
-            System.out.println("Person nicht gefunden.");
+            System.out.println("uebung1.Person nicht gefunden.");
         }
-    }
-
-    // Sucht nach einer Person mit dem angegebenen Namen in der Liste
-    public static Person searchPersonWithName(List<Person> personList, String name) {
-        for (Person person : personList) {
-            if (person.getName().equals(name)) {
-                return person;
-            }
-        }
-        return null; // Person nicht gefunden
-    }
-
-    public static Person searchPersonwithLastname(List<Person> personList, String name) {
-        for (Person person : personList) {
-            if (person.getLastName().equals(name)) {
-                return person;
-            }
-        }
-        return null; // Person nicht gefunden
-    }
-
-    // Identifiziert doppelte Merkmale (Personen mit gleichem Namen und Alter) in der Liste
-    public static List<Person> findDuplicates(List<Person> personList) {
-        List<Person> duplicates = new ArrayList<>();
-        Map<String, Integer> countMap = new HashMap<>();
-
-        for (Person person : personList) {
-            String key = person.getName() + "_" + person.getAge();
-            int count = countMap.getOrDefault(key, 0);
-            countMap.put(key, count + 1);
-        }
-
-        for (Person person : personList) {
-            String key = person.getName() + "_" + person.getAge();
-            if (countMap.get(key) > 1 && !duplicates.contains(person)) {
-                duplicates.add(person);
-            }
-        }
-
-        return duplicates;
     }
 
     // Erstellt eine Liste von 65 Personen mit verschiedenen Namen und Alterswerten
@@ -165,17 +105,17 @@ public class Uebung1 {
 //
 //    Gegeben ist der oben stehende Java-Code. Führe die folgenden Aufgaben aus:
 //
-//    Ergänze den fehlenden Code in der Klasse Person, um den Nachnamen jeder Person abzurufen (getLastName()).
+//    Ergänze den fehlenden Code in der Klasse uebung1.Person, um den Nachnamen jeder uebung1.Person abzurufen (getLastName()). check!
 //
-//    Implementiere die Methode searchPerson(List<Person> personList, String name), die eine Liste von Personen durchsucht und die Person mit dem angegebenen Namen zurückgibt. Wenn die Person nicht gefunden wird, soll null zurückgegeben werden.
+//    Implementiere die Methode searchPersonwitName und searchPersonWithLastName(List<uebung1.Person> personList, String name), die eine Liste von Personen durchsucht und die uebung1.Person mit dem angegebenen Namen zurückgibt. Wenn die uebung1.Person nicht gefunden wird, soll null zurückgegeben werden.
 //
-//    Implementiere die Methode findDuplicates(List<Person> personList), die doppelte Merkmale in der Liste identifiziert. Personen gelten als Duplikate, wenn sie den gleichen Namen und das gleiche Alter haben. Die Methode soll eine neue Liste mit den gefundenen Duplikaten zurückgeben.
+//    Implementiere die Methode findDuplicates(List<uebung1.Person> personList), die doppelte Merkmale in der Liste identifiziert. Personen gelten als Duplikate, wenn sie den gleichen Namen und das gleiche Alter haben. Die Methode soll eine neue Liste mit den gefundenen Duplikaten zurückgeben.
 //
-//    Führe die Methode searchPerson aus, um nach einer Person mit dem Namen "Max" in der erstellten personList zu suchen. Gib den Namen und das Alter der gefundenen Person aus, oder gib "Person nicht gefunden." aus, falls keine Person mit dem Namen "Max" existiert.
+//    Führe die Methode searchPerson aus, um nach einer uebung1.Person mit dem Namen "John" in der erstellten personList zu suchen. Gib den Namen und das Alter der gefundenen uebung1.Person aus, oder gib "uebung1.Person nicht gefunden." aus, falls keine uebung1.Person mit dem Namen "Max" existiert.
 //
-//    Führe die Methode findDuplicates aus, um doppelte Merkmale in der personList zu identifizieren. Gib die gefundenen Duplikate aus, indem du den Namen und das Alter jeder Person in der Konsole ausgibst. Wenn keine Duplikate gefunden wurden, gib "Keine doppelten Merkmale gefunden." aus.
+//    Führe die Methode findDuplicates aus, um doppelte Merkmale in der personList zu identifizieren. Gib die gefundenen Duplikate aus, indem du den Namen und das Alter jeder uebung1.Person in der Konsole ausgibst. Wenn keine Duplikate gefunden wurden, gib "Keine doppelten Merkmale gefunden." aus.
 //
-//    Hinweis: Vergiss nicht, den Code für die Klasse Person zu ergänzen, um den Nachnamen abzurufen (getLastName()).
+//    Hinweis: Vergiss nicht, den Code für die Klasse uebung1.Person zu ergänzen, um den Nachnamen abzurufen (getLastName()).
 
 
 }
